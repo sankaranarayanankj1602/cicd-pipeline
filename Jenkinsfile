@@ -12,18 +12,10 @@ pipeline {
             sh '''
                 # Ensure Python is available
                     python3 --version
-
-                    # Create virtual environment
-                    python3 -m venv ${VENV_DIR}
-
-                    # Activate and upgrade pip
-                    . ${VENV_DIR}/bin/activate
-                    pip install --upgrade pip
                 '''
                sh 'echo Building the project...'
                sh '''
-                    . ${VENV_DIR}/bin/activate
-                      python main.py
+                      python3 main.py
                '''
            }
        }
