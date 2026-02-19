@@ -24,6 +24,7 @@ pipeline {
         steps {
             sh '''
                 make
+                ls -l first_job
             '''
         }
        }
@@ -31,7 +32,7 @@ pipeline {
        {  
         steps 
         { 
-            archiveArtifacts artifacts: 'my_program', fingerprint: true 
+            archiveArtifacts artifacts: 'first_job', fingerprint: true 
             }
       }
        stage('CI/CD Completion') {
