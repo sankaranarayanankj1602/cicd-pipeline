@@ -26,7 +26,7 @@ pipeline {
                sh 'echo Building the project...'
                sh '''
                     . ${VENV_DIR}/bin/activate
-                    p python main.py
+                      python main.py
                '''
            }
        }
