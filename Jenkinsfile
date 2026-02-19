@@ -19,6 +19,21 @@ pipeline {
                '''
            }
        }
+       stage("Build C")
+       {
+        steps {
+            sh '''
+                make
+            '''
+        }
+       }
+       stage('Archive Artifacts') 
+       {  
+        steps 
+        { 
+            archiveArtifacts artifacts: 'my_program', fingerprint: true 
+            }
+      }
        stage('CI/CD Completion') {
            steps {
                sh 'echo CI/CD Completed'

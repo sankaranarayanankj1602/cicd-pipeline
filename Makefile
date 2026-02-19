@@ -1,0 +1,1 @@
+gcc -o first_job sample_file.c
