@@ -1,8 +1,5 @@
 pipeline {
    agent any
-   tool {
-        python 'Python3' 
-        }
    stages {
        stage('Clone Repository') {
            steps {
